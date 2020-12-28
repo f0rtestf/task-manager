@@ -1,5 +1,6 @@
 import SiteMenuView from "./view/site-menu.js";
 import FilterView from "./view/filter.js";
+import BoardView from "./view/board.js";
 import BoardController from "./controllers/board.js";
 import {generateTask} from "./mock/task.js";
 import {generateFilter} from "./mock/filter.js";
@@ -16,5 +17,8 @@ const siteHeaderElement = siteMainElement.querySelector(`.main__control`);
 render(siteHeaderElement, new SiteMenuView(), RenderPosition.BEFOREEND);
 render(siteMainElement, new FilterView(filters), RenderPosition.BEFOREEND);
 
-const boardController = new BoardController(siteMainElement);
+const boardComponent = new BoardView();
+const boardController = new BoardController(boardComponent);
+
+render(siteMainElement, boardComponent, RenderPosition.BEFOREEND);
 boardController.render(tasks);
