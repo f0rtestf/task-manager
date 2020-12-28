@@ -85,5 +85,9 @@ export default class BoardController {
         }
       });
     }
+
+    this._sortComponent.setSortTypeChangeHandler(() => {
+
+    });
   }
 }
