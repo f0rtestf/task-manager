@@ -143,4 +143,9 @@ export default class TaskEdit extends AbstractView {
   getTemplate() {
     return createTaskEditTemplate(this._task);
   }
+
+  setSubmitHandler(handler) {
+    this.getElement().querySelector(`form`)
+      .addEventListener(`submit`, handler);
+  }
 }

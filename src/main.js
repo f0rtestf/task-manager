@@ -40,12 +40,12 @@ const renderTask = (taskListElement, task) => {
     }
   };
 
-  taskComponent.getElement().querySelector(`.card__btn--edit`).addEventListener(`click`, () => {
+  taskComponent.setEditButtonClickHandler(() => {
     replaceCardToForm();
     document.addEventListener(`keydown`, onEscKeyDown);
   });
 
-  taskEditComponent.getElement().querySelector(`form`).addEventListener(`submit`, (evt) => {
+  taskEditComponent.setSubmitHandler((evt) => {
     evt.preventDefault();
     replaceFormToCard();
     document.removeEventListener(`keydown`, onEscKeyDown);
