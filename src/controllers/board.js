@@ -84,7 +84,7 @@ export default class BoardController {
         render(container, this._loadMoreButtonComponent, RenderPosition.BEFOREEND);
 
         this._loadMoreButtonComponent.setClickHandler(() => {
-          const sortedTasks = getSortedTask(tasks, this._sortComponent.getSortType(), renderedTaskCount, renderedTaskCount + TASK_COUNT_PER_STEP)
+          const sortedTasks = getSortedTask(tasks, this._sortComponent.getSortType(), renderedTaskCount, renderedTaskCount + TASK_COUNT_PER_STEP);
 
           renderTasks(taskListElement, sortedTasks);
 
