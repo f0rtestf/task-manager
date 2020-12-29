@@ -61,6 +61,7 @@ const getSortedTask = (tasks, sortType, from, to) => {
       break;
     case SortType.DEFAULT:
       sortedTasks = showingTasks;
+      break;
   }
 
   return sortedTasks.slice(from, to);
